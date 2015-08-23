@@ -37,13 +37,13 @@ func main() {
 	args := flag.Args()
 	if len(args) < 1 {
 		usage()
-		os.Exit(1)
+		os.Exit(64) // EX_USAGE
 	}
 
 	g, err := strconv.ParseFloat(args[0], 64)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+		os.Exit(65) // EX_DATAERR
 	}
 
 	s := Us
