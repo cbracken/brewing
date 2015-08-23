@@ -11,7 +11,11 @@ func usage() {
 	fmt.Fprintln(os.Stderr, "usage: abv og fg")
 }
 
+// Abv computes the alcohol by volume given an original gravity, og, and a final
+// gravity, fg.
 func Abv(og float64, fg float64) float64 {
+	// Hall, Michael. "Brew by the Numbers: Add Up What's in Your Beer." Zymurgy
+	// Summer 1995, vol. 18, no. 2.
 	return (76.08 * (og - fg) / (1.775 - og)) * (fg / 0.794)
 }
 
